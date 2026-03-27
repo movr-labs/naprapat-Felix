@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { KlinikerPage } from '../pages/KlinikerPage';
 import { OmNaprapatPage } from '../pages/OmNaprapatPage';
@@ -18,5 +18,19 @@ describe('Static React pages', () => {
   it('renders the about naprapat page content', () => {
     render(<OmNaprapatPage />);
     expect(screen.getByRole('heading', { name: /Vad är en naprapat/i })).toBeInTheDocument();
+  });
+
+  it('adds a shared mobile nav toggle', () => {
+    const { container } = render(<OmNaprapatPage />);
+    const toggle = container.querySelector('.nav-toggle');
+
+    expect(toggle).not.toBeNull();
+    expect(toggle).toHaveAttribute('aria-label', 'Öppna meny');
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+
+    fireEvent.click(toggle);
+
+    expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    expect(toggle).toHaveAttribute('aria-label', 'Stäng meny');
   });
 });
