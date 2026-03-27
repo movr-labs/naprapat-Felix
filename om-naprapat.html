@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vad är en naprapat? – Hittanaprapat.se</title>
+<meta name="description" content="Lär dig vad en naprapat är, vad de behandlar, skillnaden mot kiropraktor och fysioterapeut, och när du bör söka hjälp.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; min-height: 100vh; background: #f5fcf8; color: #111; overflow-x: hidden; }
+  .bg-waves { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(180,220,200,0.45); padding: 13px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo-icon { width: 34px; height: 34px; background: linear-gradient(135deg,#1a6641,#2d8a58); border-radius: 9px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(26,102,65,0.22); }
+  .nav-logo-icon svg { width: 20px; height: 20px; }
+  .nav-logo-name { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 300; color: #111; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { font-size: 14px; color: #5a7266; text-decoration: none; transition: color .15s; }
+  .nav-links a:hover { color: #1a6641; }
+  .nav-links a.active { color: #1a6641; font-weight: 500; }
+  .nav-cta { background: linear-gradient(135deg,#1a6641,#2d8a58); color: white !important; border-radius: 20px; padding: 8px 18px; font-size: 14px; box-shadow: 0 2px 8px rgba(26,102,65,0.2); }
+
+  .page { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 56px 24px 80px; }
+
+  /* HERO */
+  .hero { margin-bottom: 56px; text-align: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 7px; background: #eef6f1; border: 1px solid #c8dfd0; color: #1a6641; font-size: 13px; font-weight: 500; border-radius: 20px; padding: 5px 14px; margin-bottom: 20px; }
+  .hero-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #2d8a58; }
+  .hero h1 { font-family: 'Fraunces', serif; font-size: 50px; font-weight: 300; color: #111; line-height: 1.15; margin-bottom: 16px; }
+  .hero h1 span { color: #1a6641; }
+  .hero p { font-size: 18px; color: #5a7266; max-width: 580px; margin: 0 auto; line-height: 1.7; }
+
+  /* QUICK FACTS */
+  .quick-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 56px; }
+  @media(max-width:600px) { .quick-facts { grid-template-columns: 1fr; } }
+  .fact-card { background: rgba(255,255,255,0.88); backdrop-filter: blur(16px); border: 1px solid rgba(160,210,185,0.5); border-radius: 20px; padding: 22px 20px; text-align: center; box-shadow: 0 2px 12px rgba(26,102,65,0.05); }
+  .fact-num { font-family: 'Fraunces', serif; font-size: 40px; font-weight: 300; color: #1a6641; line-height: 1; margin-bottom: 6px; }
+  .fact-label { font-size: 14px; color: #5a7266; line-height: 1.4; }
+
+  /* SECTIONS */
+  .section { margin-bottom: 48px; }
+  .section-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: #2d8a58; margin-bottom: 10px; }
+  .section h2 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 300; color: #111; margin-bottom: 16px; line-height: 1.25; }
+  .section p { font-size: 16px; color: #3d5a47; line-height: 1.75; margin-bottom: 14px; }
+  .section p:last-child { margin-bottom: 0; }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(160,210,185,0.6), transparent); margin: 48px 0; }
+
+  /* BEHANDLAR / BEHANDLAR INTE */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+  @media(max-width:580px) { .two-col { grid-template-columns: 1fr; } }
+  .check-box { background: rgba(255,255,255,0.88); border: 1px solid rgba(160,210,185,0.5); border-radius: 18px; padding: 20px 22px; }
+  .check-box h3 { font-size: 15px; font-weight: 500; color: #111; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .check-list li { font-size: 14px; color: #3d5a47; display: flex; align-items: flex-start; gap: 9px; line-height: 1.45; }
+  .check-list li::before { content: ''; width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; margin-top: 1px; }
+  .check-list.yes li::before { background: #eef6f1; border: 1.5px solid #2d8a58; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 6L5 8.5L9.5 4' stroke='%231a6641' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-size: 12px; background-repeat: no-repeat; background-position: center; }
+  .check-list.no li::before { background: #fef2f2; border: 1.5px solid #e57373; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 3.5L8.5 8.5M8.5 3.5L3.5 8.5' stroke='%23c0392b' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-size: 12px; background-repeat: no-repeat; background-position: center; }
+
+  /* JÄMFÖRELSETABELL */
+  .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: rgba(255,255,255,0.88); border-radius: 18px; overflow: hidden; border: 1px solid rgba(160,210,185,0.5); }
+  .compare-table th { background: #1a6641; color: white; font-size: 13px; font-weight: 500; padding: 14px 18px; text-align: left; }
+  .compare-table th:first-child { background: #145233; }
+  .compare-table td { padding: 13px 18px; font-size: 14px; color: #3d5a47; border-top: 1px solid rgba(180,220,200,0.35); vertical-align: top; line-height: 1.5; }
+  .compare-table tr:nth-child(even) td { background: rgba(238,246,241,0.4); }
+  .compare-table td:first-child { font-weight: 500; color: #111; }
+  .highlight-row td { background: rgba(26,102,65,0.06) !important; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  .faq-item { background: rgba(255,255,255,0.88); border: 1px solid rgba(160,210,185,0.5); border-radius: 16px; overflow: hidden; }
+  .faq-q { width: 100%; text-align: left; padding: 18px 22px; font-size: 15px; font-weight: 500; color: #111; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: 'DM Sans', sans-serif; }
+  .faq-q:hover { background: rgba(238,246,241,0.5); }
+  .faq-chevron { font-size: 18px; color: #5a7266; transition: transform .2s; flex-shrink: 0; }
+  .faq-a { display: none; padding: 0 22px 18px; font-size: 14px; color: #3d5a47; line-height: 1.7; border-top: 1px solid rgba(180,220,200,0.35); padding-top: 14px; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-chevron { transform: rotate(90deg); }
+
+  /* STEPS */
+  .steps { display: flex; flex-direction: column; gap: 0; margin-top: 20px; }
+  .step-item { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 28px; position: relative; }
+  .step-item:not(:last-child)::after { content: ''; position: absolute; left: 19px; top: 42px; bottom: 0; width: 2px; background: linear-gradient(to bottom, #c2dfd0, transparent); }
+  .step-circle { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg,#1a6641,#2d8a58); color: white; font-size: 15px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px rgba(26,102,65,0.2); }
+  .step-body strong { display: block; font-size: 15px; color: #111; margin-bottom: 4px; }
+  .step-body p { font-size: 14px; color: #5a7266; line-height: 1.55; }
+
+  /* CTA BANNER */
+  .cta-banner { background: linear-gradient(135deg, #1a6641 0%, #2d8a58 100%); border-radius: 24px; padding: 40px 44px; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 56px; box-shadow: 0 8px 32px rgba(26,102,65,0.25); }
+  @media(max-width:580px) { .cta-banner { flex-direction: column; text-align: center; padding: 32px 28px; } }
+  .cta-banner h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 300; color: white; margin-bottom: 6px; }
+  .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.8); }
+  .cta-banner-btn { background: white; color: #1a6641; border: none; border-radius: 24px; padding: 14px 28px; font-size: 15px; font-family: 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; font-weight: 500; text-decoration: none; transition: opacity .15s; flex-shrink: 0; }
+  .cta-banner-btn:hover { opacity: .9; }
+</style>
+</head>
+<body>
+
+<svg class="bg-waves" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d6f0e6" stop-opacity="0.5"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="g2" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#b8dff0" stop-opacity="0.35"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="g3" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#a8e6c8" stop-opacity="0.28"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1440" height="900" fill="#f5fcf8"/>
+  <path d="M-100 700 C 200 600, 400 750, 600 650 S 900 500, 1100 620 S 1350 700, 1540 600 L1540 900 L-100 900 Z" fill="url(#g1)" opacity="0.9"/>
+  <path d="M-100 500 C 150 420, 350 560, 580 470 S 850 350, 1050 480 S 1300 560, 1540 440 L1540 900 L-100 900 Z" fill="url(#g2)" opacity="0.7"/>
+  <path d="M800 -50 C 900 80, 1100 20, 1200 150 S 1380 280, 1540 200 L1540 -50 Z" fill="url(#g3)" opacity="0.6"/>
+  <path d="M-100 620 C 200 530, 450 680, 700 570 S 1000 430, 1250 560 S 1420 640, 1540 520" stroke="#7dd4aa" stroke-width="1.2" fill="none" opacity="0.3"/>
+</svg>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 22 22" fill="none"><line x1="11" y1="2" x2="11" y2="20" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M11 5 C14 5.5 14 7.5 11 8 C8 8.5 8 10.5 11 11 C14 11.5 14 13.5 11 14 C8 14.5 8 16.5 11 17" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="11" cy="4" r="1.2" fill="white"/></svg>
+    </div>
+    <span class="nav-logo-name">hittanaprapat.se</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Start</a>
+    <a href="kliniker.html">Kliniker</a>
+    <a href="skador.html">Skador</a>
+    <a href="om-naprapat.html" class="active">Om naprapat</a>
+    <a href="index.html" class="nav-cta">Beskriv din smärta →</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge"><div class="hero-badge-dot"></div> Legitimerad vårdgivare</div>
+    <h1>Vad är en <span>naprapat?</span></h1>
+    <p>En naprapat är en legitimerad vårdgivare som specialiserar sig på att utreda, behandla och rehabilitera besvär i muskler, leder och bindväv.</p>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="quick-facts">
+    <div class="fact-card">
+      <div class="fact-num">3 år</div>
+      <div class="fact-label">Högskoleutbildning på legitimationsnivå</div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-num">~1 200</div>
+      <div class="fact-label">Legitimerade naprapater i Sverige</div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-num">Ingen</div>
+      <div class="fact-label">Remiss behövs – boka direkt</div>
+    </div>
+  </div>
+
+  <!-- VAD ÄR -->
+  <div class="section">
+    <div class="section-label">Bakgrund</div>
+    <h2>Naprapatin – en nordisk tradition</h2>
+    <p>Naprapati är en manuell behandlingsform som utvecklades i USA i början av 1900-talet och sedan förfinades i Sverige och Finland, där den idag är en legitimationsgrundande profession reglerad av Socialstyrelsen.</p>
+    <p>Naprapaten arbetar med hela rörelseapparaten – muskler, leder, ligament och bindväv – och kombinerar manuell behandling med råd om träning, ergonomi och livsstil. Målet är inte bara att lindra smärta utan att hitta och åtgärda grundorsaken.</p>
+    <p>Naprapater arbetar på privatmottagningar, inom företagshälsovård, inom idrotten och i vissa landsting. De flesta patienter behöver inte remiss och kan boka direkt.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BEHANDLAR / BEHANDLAR INTE -->
+  <div class="section">
+    <div class="section-label">Behandlingsområde</div>
+    <h2>Vad behandlar en naprapat?</h2>
+    <p>Naprapater är specialister på besvär i rörelseapparaten – men det finns gränser för vad de behandlar.</p>
+    <div class="two-col">
+      <div class="check-box">
+        <h3>✅ Naprapaten behandlar</h3>
+        <ul class="check-list yes">
+          <li>Rygg- och nacksmärta</li>
+          <li>Diskbråck och ischias</li>
+          <li>Axel- och skulderbesvär</li>
+          <li>Tennisarmbåge och golfarmbåge</li>
+          <li>Höft- och bäckensmärta</li>
+          <li>Löparknä och hoppknä</li>
+          <li>Plantar fasciit och akillestendinit</li>
+          <li>Spänningshuvudvärk</li>
+          <li>Whiplash och nackspärr</li>
+          <li>Idrottsskador och överbelastningar</li>
+        </ul>
+      </div>
+      <div class="check-box">
+        <h3>❌ Naprapaten behandlar inte</h3>
+        <ul class="check-list no">
+          <li>Inre organsjukdomar</li>
+          <li>Inflammatorisk ledgångsreumatism (akut)</li>
+          <li>Osteoporos med frakturrisk</li>
+          <li>Nervskador som kräver kirurgi</li>
+          <li>Cancerrelaterad smärta</li>
+          <li>Psykisk ohälsa</li>
+          <li>Hudsjukdomar</li>
+          <li>Tandbesvär</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- JÄMFÖRELSE -->
+  <div class="section">
+    <div class="section-label">Jämförelse</div>
+    <h2>Naprapat, kiropraktor eller fysioterapeut?</h2>
+    <p>Det är lätt att förväxla dessa tre. Här är de viktigaste skillnaderna.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Aspekt</th>
+          <th>Naprapat</th>
+          <th>Kiropraktor</th>
+          <th>Fysioterapeut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-row">
+          <td>Fokus</td>
+          <td>Muskler, leder & bindväv</td>
+          <td>Ryggrad & nerver</td>
+          <td>Rörelse & funktion</td>
+        </tr>
+        <tr>
+          <td>Utbildning</td>
+          <td>3 år, legitimation</td>
+          <td>4–5 år, legitimation</td>
+          <td>3 år, legitimation</td>
+        </tr>
+        <tr>
+          <td>Behandlingsmetod</td>
+          <td>Manuell + träning</td>
+          <td>Manipulation + justering</td>
+          <td>Träning + teknik</td>
+        </tr>
+        <tr>
+          <td>Remiss</td>
+          <td>Behövs inte</td>
+          <td>Behövs inte</td>
+          <td>Behövs inte</td>
+        </tr>
+        <tr>
+          <td>Vanligast vid</td>
+          <td>Rygg, nacke, idrottsskador</td>
+          <td>Rygg, nacke</td>
+          <td>Rehab, neurologi, äldre</td>
+        </tr>
+        <tr>
+          <td>Pris (ca)</td>
+          <td>600–1 200 kr/besök</td>
+          <td>600–1 200 kr/besök</td>
+          <td>200–400 kr (ofta via vård)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ETT BESÖK -->
+  <div class="section">
+    <div class="section-label">Så går det till</div>
+    <h2>Vad händer på ett naprapatbesök?</h2>
+    <p>De flesta besök tar 30–60 minuter och följer ett tydligt mönster.</p>
+    <div class="steps">
+      <div class="step-item">
+        <div class="step-circle">1</div>
+        <div class="step-body">
+          <strong>Anamnes – berättar om ditt besvär</strong>
+          <p>Naprapaten ställer frågor om smärtans karaktär, duration, utlösande faktorer och din livsstil.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">2</div>
+        <div class="step-body">
+          <strong>Undersökning</strong>
+          <p>Rörelsetest, muskeltest, ortopediska tester och ibland neurologisk screening för att hitta orsaken.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">3</div>
+        <div class="step-body">
+          <strong>Behandling</strong>
+          <p>Manuell behandling av muskler och leder, eventuell ledmanipulation och mjukdelsarbete.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">4</div>
+        <div class="step-body">
+          <strong>Råd & hemövningar</strong>
+          <p>Du får specifika övningar, ergonomiråd och råd om belastning att ta med hem.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">5</div>
+        <div class="step-body">
+          <strong>Uppföljning</strong>
+          <p>De flesta behöver 2–6 besök. Naprapaten utvärderar behandlingen och justerar planen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <div class="section-label">Vanliga frågor</div>
+    <h2>Det folk undrar mest om</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Behöver jag remiss för att gå till en naprapat?
+          <span class="faq-chevron">›</span>
+        </button>
+        <div class="faq-a">Nej. Du bokar direkt utan remiss. Naprapater är primärvårdgivare, vilket innebär att du kan söka dig dit som första vårdkontakt utan att gå via läkare.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Täcker försäkringen eller landstinget naprapatbesök?
+          <span class="faq-chevron">›</span>
+        </button>
+        <div class="faq-a">Det varierar. Många privata sjukförsäkringar täcker naprapatbesök. Friskvårdsbidraget kan användas hos legitimerade naprapater. Landstingsfinansierade besök är ovanligare men förekommer. Kolla med din arbetsgivare och försäkring.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Hur många behandlingar behöver jag?
+          <span class="faq-chevron">›</span>
+        </button>
+        <div class="faq-a">Det beror på besvärens karaktär. Akuta besvär som nackspärr kan lösas på 1–3 besök. Kroniska tillstånd eller rehabilitering efter skada kan kräva 6–12 besök över flera månader.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Kan det göra ont under behandlingen?
+          <span class="faq-chevron">›</span>
+        </button>
+        <div class="faq-a">Det är vanligt att känna lite ömhet under och efter behandlingen, särskilt vid djup vävnadsmassage. Du ska alltid informera naprapaten om det gör för ont. Ledjusteringar kan producera ett knäppande ljud – det är helt normalt och ofarligt.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Vad kostar ett naprapatbesök?
+          <span class="faq-chevron">›</span>
+        </button>
+        <div class="faq-a">Ett vanligt besök kostar mellan 600 och 1 200 kronor beroende på klinik, ort och besökets längd. Många kliniker erbjuder paketpriser för flera behandlingar.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Skillnaden mellan naprapat och massör?
+          <span class="faq-chevron">›</span>
+        </button>
+        <div class="faq-a">En massör är inte legitimerad vårdgivare och arbetar enbart med mjukvävnad. En naprapat är legitimerad, kan ställa diagnos, behandlar även leder och kan skriva intyg. Naprapaten har också en tydligare rehabiliteringsroll.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Är naprapater legitimerade i Sverige?
+          <span class="faq-chevron">›</span>
+        </button>
+        <div class="faq-a">Ja. Naprapatyrket är sedan 1994 legitimationsgrundande i Sverige och regleras av Socialstyrelsen. Utbildningen ges vid Naprapathögskolan i Stockholm och omfattar 3 år på heltid.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div>
+      <h2>Redo att hitta din naprapat?</h2>
+      <p>Beskriv din smärta – vi matchar dig med rätt specialist inom 24 timmar.</p>
+    </div>
+    <a class="cta-banner-btn" href="index.html">Beskriv din smärta →</a>
+  </div>
+
+</div>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
