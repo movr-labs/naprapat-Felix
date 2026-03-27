@@ -47,6 +47,7 @@
     color: white; border: none; border-radius: 20px;
     padding: 8px 18px; font-size: 14px; font-family: 'DM Sans', sans-serif;
     cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; justify-content: center;
     box-shadow: 0 2px 8px rgba(26,102,65,0.2);
   }
 
@@ -186,6 +187,73 @@
   .city-card-name { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 300; color: #111; margin-bottom: 4px; }
   .city-card-count { font-size: 13px; color: #5a7266; }
   .city-card-dot { width: 8px; height: 8px; border-radius: 50%; background: #2d8a58; display: inline-block; margin-right: 6px; }
+
+  @media(max-width:760px) {
+    nav {
+      padding: 12px 16px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .nav-logo-name { font-size: 15px; }
+    .nav-links {
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      justify-content: flex-start;
+    }
+    .nav-links a { font-size: 13px; }
+    .nav-cta {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media(max-width:720px) {
+    .page { padding: 28px 16px 40px; }
+    .hero { margin-bottom: 24px; }
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 15px; }
+    .city-tabs { margin-bottom: 20px; }
+    .city-tab {
+      flex: 1 1 calc(50% - 8px);
+      text-align: center;
+      padding: 8px 12px;
+    }
+    .map-placeholder {
+      height: 320px;
+      padding: 20px 16px 48px;
+    }
+    .map-city-label { font-size: 22px; }
+    .map-stats { flex-direction: column; }
+    .map-stat {
+      border-right: none;
+      border-bottom: 1px solid rgba(180,220,200,0.45);
+    }
+    .map-stat:last-child { border-bottom: none; }
+    .clinic-card { padding: 14px; }
+    .clinic-actions { flex-direction: column; }
+    .clinic-btn { width: 100%; }
+    .all-cities h2 { font-size: 24px; }
+    .city-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media(max-width:420px) {
+    .city-tab { flex-basis: 100%; }
+    .city-grid { grid-template-columns: 1fr; }
+    .map-pin {
+      width: 100%;
+      justify-content: center;
+    }
+    .clinic-card-top {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .clinic-avatar {
+      width: 56px;
+      height: 56px;
+    }
+  }
 </style>
 </head>
 <body>

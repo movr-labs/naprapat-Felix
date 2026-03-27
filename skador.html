@@ -25,7 +25,7 @@
   .nav-links a { font-size: 14px; color: #5a7266; text-decoration: none; transition: color .15s; }
   .nav-links a:hover { color: #1a6641; }
   .nav-links a.active { color: #1a6641; font-weight: 500; }
-  .nav-cta { background: linear-gradient(135deg,#1a6641,#2d8a58); color: white !important; border: none; border-radius: 20px; padding: 8px 18px; font-size: 14px; font-family: 'DM Sans', sans-serif; cursor: pointer; text-decoration: none; box-shadow: 0 2px 8px rgba(26,102,65,0.2); }
+  .nav-cta { background: linear-gradient(135deg,#1a6641,#2d8a58); color: white !important; border: none; border-radius: 20px; padding: 8px 18px; font-size: 14px; font-family: 'DM Sans', sans-serif; cursor: pointer; text-decoration: none; box-shadow: 0 2px 8px rgba(26,102,65,0.2); display: inline-flex; align-items: center; justify-content: center; }
 
   .page { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
 
@@ -87,6 +87,73 @@
   .cta-banner p { font-size: 15px; color: #5a7266; }
   .cta-banner-btn { background: linear-gradient(135deg,#1a6641,#2d8a58); color: white; border: none; border-radius: 24px; padding: 14px 28px; font-size: 15px; font-family: 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; box-shadow: 0 4px 16px rgba(26,102,65,0.25); text-decoration: none; transition: opacity .15s; }
   .cta-banner-btn:hover { opacity: .88; }
+
+  @media(max-width:760px) {
+    nav {
+      padding: 12px 16px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .nav-logo-name { font-size: 15px; }
+    .nav-links {
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      justify-content: flex-start;
+    }
+    .nav-links a { font-size: 13px; }
+    .nav-cta {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media(max-width:720px) {
+    .page { padding: 28px 16px 40px; }
+    .hero { margin-bottom: 28px; }
+    .hero h1 { font-size: 34px; }
+    .hero p { font-size: 15px; }
+    .area-tabs { margin-bottom: 24px; }
+    .area-tab {
+      flex: 1 1 calc(50% - 8px);
+      text-align: center;
+      padding: 8px 12px;
+    }
+    .area-header {
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .area-title { font-size: 26px; }
+    .area-subtitle { font-size: 14px; }
+    .condition-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .condition-card { padding: 18px 16px; }
+    .cta-banner { padding: 28px 20px; }
+    .cta-banner h2 { font-size: 24px; }
+    .cta-banner-btn {
+      width: 100%;
+      text-align: center;
+      white-space: normal;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @media(max-width:420px) {
+    .area-tab { flex-basis: 100%; }
+    .condition-name { font-size: 18px; }
+    .detail-recover { align-items: flex-start; }
+    .detail-cta {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+  }
 </style>
 </head>
 <body>

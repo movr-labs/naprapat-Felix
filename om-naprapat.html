@@ -20,7 +20,7 @@
   .nav-links a { font-size: 14px; color: #5a7266; text-decoration: none; transition: color .15s; }
   .nav-links a:hover { color: #1a6641; }
   .nav-links a.active { color: #1a6641; font-weight: 500; }
-  .nav-cta { background: linear-gradient(135deg,#1a6641,#2d8a58); color: white !important; border-radius: 20px; padding: 8px 18px; font-size: 14px; box-shadow: 0 2px 8px rgba(26,102,65,0.2); }
+  .nav-cta { background: linear-gradient(135deg,#1a6641,#2d8a58); color: white !important; border-radius: 20px; padding: 8px 18px; font-size: 14px; box-shadow: 0 2px 8px rgba(26,102,65,0.2); display: inline-flex; align-items: center; justify-content: center; }
 
   .page { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 56px 24px 80px; }
 
@@ -61,7 +61,8 @@
   .check-list.no li::before { background: #fef2f2; border: 1.5px solid #e57373; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 3.5L8.5 8.5M8.5 3.5L3.5 8.5' stroke='%23c0392b' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-size: 12px; background-repeat: no-repeat; background-position: center; }
 
   /* JÄMFÖRELSETABELL */
-  .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: rgba(255,255,255,0.88); border-radius: 18px; overflow: hidden; border: 1px solid rgba(160,210,185,0.5); }
+  .table-wrap { margin-top: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 18px; }
+  .compare-table { width: 100%; min-width: 720px; border-collapse: collapse; margin-top: 0; background: rgba(255,255,255,0.88); border-radius: 18px; overflow: hidden; border: 1px solid rgba(160,210,185,0.5); }
   .compare-table th { background: #1a6641; color: white; font-size: 13px; font-weight: 500; padding: 14px 18px; text-align: left; }
   .compare-table th:first-child { background: #145233; }
   .compare-table td { padding: 13px 18px; font-size: 14px; color: #3d5a47; border-top: 1px solid rgba(180,220,200,0.35); vertical-align: top; line-height: 1.5; }
@@ -92,8 +93,69 @@
   @media(max-width:580px) { .cta-banner { flex-direction: column; text-align: center; padding: 32px 28px; } }
   .cta-banner h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 300; color: white; margin-bottom: 6px; }
   .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.8); }
-  .cta-banner-btn { background: white; color: #1a6641; border: none; border-radius: 24px; padding: 14px 28px; font-size: 15px; font-family: 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; font-weight: 500; text-decoration: none; transition: opacity .15s; flex-shrink: 0; }
+  .cta-banner-btn { background: white; color: #1a6641; border: none; border-radius: 24px; padding: 14px 28px; font-size: 15px; font-family: 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; font-weight: 500; text-decoration: none; transition: opacity .15s; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; }
   .cta-banner-btn:hover { opacity: .9; }
+
+  @media(max-width:760px) {
+    nav {
+      padding: 12px 16px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .nav-logo-name { font-size: 15px; }
+    .nav-links {
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      justify-content: flex-start;
+    }
+    .nav-links a { font-size: 13px; }
+    .nav-cta {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media(max-width:720px) {
+    .page { padding: 32px 16px 40px; }
+    .hero { margin-bottom: 40px; }
+    .hero h1 { font-size: 36px; }
+    .hero p { font-size: 16px; }
+    .fact-num { font-size: 32px; }
+    .section { margin-bottom: 36px; }
+    .section h2 { font-size: 26px; }
+    .section p { font-size: 15px; line-height: 1.7; }
+    .divider { margin: 36px 0; }
+    .check-box { padding: 18px; }
+    .faq-q { padding: 16px 18px; font-size: 14px; }
+    .faq-a { padding: 12px 18px 16px; }
+    .step-item {
+      gap: 14px;
+      padding-bottom: 22px;
+    }
+    .step-item:not(:last-child)::after {
+      left: 15px;
+      top: 38px;
+    }
+    .step-circle {
+      width: 32px;
+      height: 32px;
+      font-size: 13px;
+    }
+    .cta-banner { padding: 28px 20px; }
+    .cta-banner h2 { font-size: 24px; }
+    .cta-banner-btn {
+      width: 100%;
+      text-align: center;
+      white-space: normal;
+    }
+  }
+
+  @media(max-width:420px) {
+    .hero h1 { font-size: 32px; }
+    .hero-badge { font-size: 12px; }
+  }
 </style>
 </head>
 <body>
@@ -207,6 +269,7 @@
     <div class="section-label">Jämförelse</div>
     <h2>Naprapat, kiropraktor eller fysioterapeut?</h2>
     <p>Det är lätt att förväxla dessa tre. Här är de viktigaste skillnaderna.</p>
+    <div class="table-wrap">
     <table class="compare-table">
       <thead>
         <tr>
@@ -255,6 +318,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 
   <div class="divider"></div>
