@@ -136,6 +136,7 @@ export function setupHomePage(container) {
           <input class="contact-input" name="name" type="text" placeholder="Namn" autocomplete="name" />
           <input class="contact-input" name="email" type="email" placeholder="Mejl" autocomplete="email" />
           <input class="contact-input" name="phone" type="tel" placeholder="Telefonnummer" autocomplete="tel" />
+          <input class="contact-input" name="city" type="text" placeholder="Stad" autocomplete="address-level2" />
           <div class="contact-error" aria-live="polite"></div>
           <button class="contact-submit" type="submit">Skicka kontaktuppgifter</button>
         </form>
@@ -197,7 +198,7 @@ export function setupHomePage(container) {
     input.value = '';
 
     if (awaitingContact) {
-      addBotBubble('Fyll i namn, mejl och telefon i formuläret ovan så kan vi återkomma.');
+      addBotBubble('Fyll i namn, mejl, telefon och stad i formuläret ovan så kan vi återkomma.');
       return;
     }
 
@@ -217,12 +218,14 @@ export function setupHomePage(container) {
     if (!currentFlow || !awaitingContact) return;
 
     const name = form.elements.namedItem('name')?.value.trim() ?? '';
+    const city = form.elements.namedItem('city')?.value.trim() ?? '';
     const email = form.elements.namedItem('email')?.value.trim() ?? '';
     const phone = form.elements.namedItem('phone')?.value.trim() ?? '';
     const errorBox = form.querySelector('.contact-error');
 
     let error = '';
     if (!name) error = 'Fyll i ditt namn.';
+    else if (!city) error = 'Fyll i din stad.';
     else if (!email) error = 'Fyll i din mejladress.';
     else if (!isValidEmail(email)) error = 'Ange en giltig mejladress.';
     else if (!phone) error = 'Fyll i ditt telefonnummer.';
@@ -247,7 +250,8 @@ export function setupHomePage(container) {
         <div class="contact-confirmed-row"><span>Namn</span><strong>${escapeHtml(name)}</strong></div>
         <div class="contact-confirmed-row"><span>Mejl</span><strong>${escapeHtml(email)}</strong></div>
         <div class="contact-confirmed-row"><span>Telefon</span><strong>${escapeHtml(phone)}</strong></div>
-      </div>
+        <div class="contact-confirmed-row"><span>Stad</span><strong>${escapeHtml(city)}</strong></div>
+        </div>
     `;
 
     awaitingContact = false;

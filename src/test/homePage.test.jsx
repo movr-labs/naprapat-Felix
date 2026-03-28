@@ -35,6 +35,7 @@ describe('HomePage chat flow', () => {
     expect(screen.getByText(/sista steget/i)).toBeInTheDocument();
 
     fireEvent.change(screen.getByPlaceholderText('Namn'), { target: { value: 'Anna Andersson' } });
+    fireEvent.change(screen.getByPlaceholderText('Stad'), { target: { value: 'Stockholm' } });
     fireEvent.change(screen.getByPlaceholderText('Mejl'), { target: { value: 'anna@example.com' } });
     fireEvent.change(screen.getByPlaceholderText('Telefonnummer'), { target: { value: '+46701234567' } });
     fireEvent.submit(screen.getByRole('button', { name: /skicka kontaktuppgifter/i }).closest('form'));
@@ -44,6 +45,7 @@ describe('HomePage chat flow', () => {
     });
 
     expect(screen.getByText(/kontaktuppgifter registrerade/i)).toBeInTheDocument();
+    expect(screen.getByText('Stockholm')).toBeInTheDocument();
     expect(screen.getByText(/vi återkommer via e-post inom 24 timmar/i)).toBeInTheDocument();
   });
 });
